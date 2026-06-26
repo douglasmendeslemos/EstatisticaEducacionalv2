@@ -8,7 +8,7 @@ public class TabelaEstatistica {
         this.linhas = linhas;
     }
 
-    // Sobrescrita do método toString() para renderizar a tabela automaticamente
+    // Sobrescrita do metodo toString() para renderizar a tabela automaticamente
     @Override
     public String toString() {
         if (linhas == null || linhas.length == 0) {
@@ -23,7 +23,7 @@ public class TabelaEstatistica {
 
         // 2. Adiciona cada linha formatada
         for (IntervaloClasse linha : linhas) {
-            String textoClasse = String.format("[%.1f |---- %.1f)", 
+            String textoClasse = String.format("[%.1f |---- %.1f ]",
                     linha.getLimiteInferior(), 
                     linha.getLimiteSuperior()
             );

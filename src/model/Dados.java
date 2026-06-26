@@ -1,19 +1,29 @@
 package model;
 
+import java.util.Arrays;
+
 public class Dados {
 
     private int[] vetorDados;
 
+    @Override
+    public String toString() {
+        if (vetorDados == null || vetorDados.length == 0) {
+            return "Nenhum dado cadastrado.";
+        }
+        StringBuilder sb = new StringBuilder();
 
-    //Amplitude de um intervalo de classe
-    public Double CalcularAmplitudeClasse(Double limiteInferior, Double limiteSuperior){
-        return (limiteSuperior - limiteInferior);
-    }//Ficar ligado, aqui está retornando um Double. isso pode interferir nos resultados.
-
-    //Amplitude Total de uma distribuição.
-    public Double CalcularAmplitudeTotal(Double limiteInferior, Double limiteSuperior){
-        return (limiteSuperior - limiteInferior);
-    }//é a diferença entre o limite superior da última classe e o limite inferior da primeira classe
+        sb.append("Valores adicionados ao vetor:\n");
+        int colunas = 10;
+        for (int i = 0; i < vetorDados.length; i++) {
+            sb.append(String.format("%5d", vetorDados[i]));
+            if ((i + 1) % colunas == 0)
+                sb.append("\n");
+        }
+        if (vetorDados.length % colunas != 0)
+            sb.append("\n");
+        return sb.toString();
+    }
 
     //Getter and Setter
     public int[] getVetorDados() {

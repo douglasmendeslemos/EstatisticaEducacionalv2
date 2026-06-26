@@ -3,47 +3,33 @@ package model;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Estatistica extends Dados {
+public class Estatistica{
 
     Dados dados = new Dados();
 
-    public void lerDados(){
+    //Alteração do retorno, antes void, agora retorna um vetor com os valores.
+    public int[] lerDados(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite os valores separados por Ponto-Virgula (ex: 10,20,30,40):");
+        System.out.println("Digite os valores separados por Virgula (ex: 10,20,30,40):");
         String entrada = scanner.nextLine();
 
-        // Remove espaços em branco e divide a string onde tem vírgula
-        String[] valoresString = entrada.replaceAll("\\s+", "").split(";");
+        // Remove espaços em branco e divide o texto onde tem vírgula
+        String[] valoresString = entrada.replaceAll("\\s+", "").split(",");
 
         // Cria o vetor com o tamanho exato dos elementos digitados
         dados.setVetorDados(new int[valoresString.length]);
 
-        // Converte as strings para inteiros e adiciona no vetor
+        // Converte os textos para inteiros e adiciona no vetor
         for (int i = 0; i < valoresString.length; i++) {
-            int [] vetorDados = dados.getVetorDados();
-            vetorDados[i] = Integer.parseInt(valoresString[i]);
-            dados.setVetorDados(vetorDados);
+            //Como arrays são passados por referência.
+            dados.getVetorDados()[i] = Integer.parseInt(valoresString[i]);
         }
-
-        // Exibe os valores para confirmar
-        System.out.println("Valores adicionados ao vetor:");
-        int colunas = 10; // Defina o número de colunas que deseja
-        int contador = 0;
         Arrays.sort(dados.getVetorDados());//Ordena os valores do vetor.
-        for (int valor : dados.getVetorDados()) {
-            System.out.print(valor + "\t"); // Imprime na mesma linha (com tabulação)
-            contador++;
+        //System.out.println("Vetor dados: " + Arrays.toString(dados.getVetorDados()));
+        // impressão dos valores ordenados
 
-            // Se atingiu o número de colunas, quebra a linha
-            if (contador % colunas == 0) {
-                System.out.println();
-            }
-        }
-        // Quebra de linha final caso o total de elementos não seja múltiplo do número de colunas
-        if (contador % colunas != 0) {
-            System.out.println();
-        }
-        scanner.close();
+
+        return dados.getVetorDados();
     }
 
     //metodo para retornar o vetor
@@ -61,7 +47,7 @@ public class Estatistica extends Dados {
     }
 
     //metodo para calcular a frequencia dos dados.
-    //e adicionar em um vetor a parte
+    //e adicionar num vetor a parte
     public void calcFrequencia(int[] vetor){
 
     }

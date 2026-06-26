@@ -15,14 +15,16 @@ public class Main {
         System.out.println("|                                         |");
         System.out.println("|       TIPO DE DADOS: Não Agrupados      |");
         System.out.println("-------------------------------------------");
-        //Estatistica estatistica = new Estatistica();
+
+        Estatistica estatistica = new Estatistica();
 
         //estatistica.lerDados();
 
-        int[] meuVetorAmostra = {84,68,33,52,47,73,68,61,73,77,74,71,81,91,65,55,57,35,85,88,59,80,41,50,53,65,76,85,73,60,67,41,78,56,94,35,45,55,64,74,65,94,66,48,39,69,89,98,42,54};
-
+        //int[] meuVetorAmostra =
+        //{84,68,33,52,47,73,68,61,73,77,74,71,81,91,65,55,57,35,85,88,59,80,41,50,53,65,76,85,73,60,67,41,78,56,94,35,45,55,64,74,65,94,66,48,39,69,89,98,42,54};
+        //int[] meuVetorAmostra2 = {150,154,155,157,160,161,162,164,166,169,151,155,156,158,160,161,162,164,167,170,152,155,156,158,160,161,163,164,168,172,153,155,156,160,160,161,163,165,168,173};
         // Gera e ARMAZENA os cálculos estruturados
-        TabelaEstatistica minhaTabela = CalculadorEstatistico.gerarTabelaFrequencias(meuVetorAmostra);
+        TabelaEstatistica minhaTabela = CalculadorEstatistico.gerarTabelaFrequencias(estatistica.lerDados());
         System.out.println(minhaTabela);
 
         /**
