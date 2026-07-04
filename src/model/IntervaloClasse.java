@@ -16,12 +16,12 @@ public class IntervaloClasse {
         this.frequenciaAbsoluta = 0; // Começa zerada para podermos contar
     }
 
-    // Método para verificar se um valor pertence a esta classe [inferior, superior)
+    // Metodo para verificar se um valor pertence a esta classe [inferior, superior)
     public boolean contem(double valor) {
         return valor >= limiteInferior && valor < limiteSuperior;
     }
 
-    // Método para incrementar a contagem
+    // Metodo para incrementar a contagem
     public void incrementarFrequencia() {
         this.frequenciaAbsoluta++;
     }

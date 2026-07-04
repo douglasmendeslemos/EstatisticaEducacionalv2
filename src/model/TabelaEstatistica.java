@@ -8,6 +8,14 @@ public class TabelaEstatistica {
         this.linhas = linhas;
     }
 
+    public IntervaloClasse[] getLinhas() {
+        return linhas;
+    }
+
+    public void setLinhas(IntervaloClasse[] linhas) {
+        this.linhas = linhas;
+    }
+
     // Sobrescrita do metodo toString() para renderizar a tabela automaticamente
     @Override
     public String toString() {
